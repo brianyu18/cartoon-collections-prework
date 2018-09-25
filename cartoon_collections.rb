@@ -13,15 +13,17 @@ def summon_captain_planet(elements)
 end
 
 def long_planeteer_calls(calls)
-  calls.include {|ele| ele.length == 4)
+  calls.each do |ele|
+    if ele.length > 4
+      return true
+    end
   end
+  return false
 end
 
 def find_the_cheese(arr)
   cheese_types = ["cheddar", "gouda", "camembert"]
-  arr.find do |item| 
-    item.each do |check| 
-      check == item
-    end
+  arr.find do |cheese| 
+    cheese_types.include? (cheese)
   end
 end
